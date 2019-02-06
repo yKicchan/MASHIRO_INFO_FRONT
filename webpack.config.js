@@ -25,9 +25,20 @@ module.exports = {
             }
           },
           {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: enabledSourceMap,
+              plugins: [
+                require('autoprefixer')({grid: true})
+              ]
+            },
+          },
+          {
             loader: "sass-loader",
             options: {
-              sourceMap: enabledSourceMap
+              sourceMap: enabledSourceMap,
+              data: "@import '__imports.scss';",
+              includePaths: [path.resolve(__dirname, 'src/styles/')]
             }
           }
         ]
