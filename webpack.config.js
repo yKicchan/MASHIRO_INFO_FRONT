@@ -1,6 +1,11 @@
-const path = require('path');
-const mode = 'development';
+const path = require('path')
+const mode = 'development'
 const enabledSourceMap = mode === 'development'
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+function src(subdir) {
+  return path.join(__dirname, "src", subdir)
+}
 
 module.exports = {
   mode: mode,
@@ -20,14 +25,12 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: true,
-              localIdentName: "[name]-[local]-[hash:base64:5]",
-              sourceMap: enabledSourceMap
+              localIdentName: "[name]-[local]-[hash:base64:5]"
             }
           },
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: enabledSourceMap,
               plugins: [
                 require('autoprefixer')({grid: true})
               ]
@@ -36,7 +39,6 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              sourceMap: enabledSourceMap,
               data: "@import '__imports.scss';",
               includePaths: [path.resolve(__dirname, 'src/styles/')]
             }
@@ -53,13 +55,26 @@ module.exports = {
     contentBase: './dist', 
     inline: true,
     host: 'localhost',
-    port: 8080
+    port: 8080,
+    historyApiFallback: true
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', 'json' ]
+    extensions: [ '.tsx', '.ts', '.js', 'json' ],
+    alias: {
+      assets: src('../assets'),
+      components: src('components'),
+      pages: src('pages')
+    }
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: src('/index.html'),
+      filename: 'index.html'
+    })
+  ]
 }
