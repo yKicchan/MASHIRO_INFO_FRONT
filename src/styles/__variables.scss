@@ -6,23 +6,36 @@
 
 /*----------  Definitions  ----------*/
 
-$windowMax: 1366px;
-$windowMin: 960px;
+$_Max: 1366;
+$_Min: 960;
+$_Contents: 1280;
+$_AroundMargin: ($_Max - $_Contents) / 2;
+$_ArticleWidth: 240;
 
 /*----------  Colors  ----------*/
 
-$cFontBase: #303131;
-$cFontHelp: #aaaaaa;
-$cGradation: linear-gradient(to right, #81e7f6, #faf9df);
+$cWhite: #FFFFFF;
+$cBlack: #303131;
+$cHelp: #aaaaaa;
+$cGradation: linear-gradient(to right, #D5FFFD, #FAF9DF);
 
 /*----------  Size  ----------*/
 
+$sMargin: $_AroundMargin + px;
+$sMax: $_Max + px;
+$sMin: $_Min + px;
+$sContents: $_Contents + px;
 $sFontBase: 14px;
-$sLetterSpacing: .6em;
+$sLetterSpacing: .06em;
 $sLineHeight: 1.8em;
+
+/*----------  Z Indices  ----------*/
+
+$zMenu: 10;
+$zMenuButton: 11;
 
 /*----------  Others  ----------*/
 
-$fontFamily: Yakuhan, Monstserrat, 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体';
+$fontFamily: Montserrat, YakuHanJP, 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体';
 
 /*=====  End of Application Variables  ======*/

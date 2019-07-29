@@ -1,0 +1,3 @@
+@function liquid($size, $base: $_Contents) {
+  @return calc(100% * #{$size} / #{$base});
+}

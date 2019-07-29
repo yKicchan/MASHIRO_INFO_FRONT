@@ -1,0 +1,13 @@
+@mixin aroundMargin {
+  padding: 0 $sMargin;
+
+  @media (min-width: $sMax) {
+    padding: 0 calc((100vw - #{$sContents}) / 2);
+  }
+}
+
+@mixin circle($size: 48px) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
