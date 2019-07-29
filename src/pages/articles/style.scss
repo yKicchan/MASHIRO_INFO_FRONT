@@ -1,0 +1,27 @@
+$count: 4;
+
+.component {
+  text-align: center;
+}
+
+.count {
+  margin-top: 40px;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  margin-top: 120px;
+  margin-bottom: 174px;
+
+  li {
+    margin-right: liquid(106);
+    margin-bottom: 220px;
+    width: liquid($_ArticleWidth);
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
