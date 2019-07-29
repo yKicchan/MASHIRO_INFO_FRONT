@@ -1,0 +1,40 @@
+.component {
+  position: relative;
+  margin-top: 56px;
+  box-shadow: 0 12px 24px rgba(204, 204, 204, .24);
+  z-index: $zMenuButton;
+
+  > span {
+    display: inline-block;
+    background-color: $cBlack;
+    transition: all .2s ease-in;
+  }
+}
+
+.menu > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  &:nth-child(2) {
+    margin: 0 6px;
+  }
+}
+
+.close > span {
+  position: absolute;
+  width: 20.5px; // ≒ 16*16px
+  height: 2px;
+
+  &:first-child {
+    transform: rotate(-45deg);
+  }
+
+  &:last-child {
+    transform: rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,35 @@
+.component {
+  @include aroundMargin;
+  display: flex;
+  align-items: center;
+  height: 230px;
+  min-height: 230px;
+  background: $cGradation;
+
+  // @media (min-width: $sMax) {
+  //   justify-content: center;
+  // }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+
+  // @media (max-width: $sMax) {
+  //   margin-right: initial;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 160px;
+      border-top: 1px solid $cBlack;
+      margin: 0 32px;
+    }
+  // }
+}
+
+.button:not(:first-of-type) {
+  margin-left: 24px;
+}
+
