@@ -1,0 +1,7 @@
+.component {
+  @include circle;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $cWhite;
+}
